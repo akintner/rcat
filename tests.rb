@@ -6,11 +6,12 @@ require "open3"
 working_dir = File.dirname(__FILE__)
 gettysburg_file = "#{working_dir}/data/gettysburg.txt"
 spaced_file     = "#{working_dir}/data/spaced_out.txt"
+lorem           = "#{working_dir}/data/lorem.txt"
 
 ############################################################################
 
-cat_output  = `cat #{gettysburg_file}`
-rcat_output = `rcat #{gettysburg_file}`
+cat_output  = `cat #{lorem}`
+rcat_output = `rcat #{lorem}`
 
 fail "Failed 'cat == rcat'" unless cat_output == rcat_output
 
@@ -39,8 +40,8 @@ fail "Failed 'cat -n == rcat -n'" unless cat_output == rcat_output
 
 ############################################################################
 
-cat_output  = `cat -b #{gettysburg_file}`
-rcat_output = `rcat -b #{gettysburg_file}`
+cat_output  = `cat -b #{lorem}`
+rcat_output = `rcat -b #{lorem}`
 
 fail "Failed 'cat -b == rcat -b'" unless cat_output == rcat_output
 
